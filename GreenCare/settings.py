@@ -128,7 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add this to STATICFILES_DIRS if your static files are in an external location
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # For global static files
+    BASE_DIR / 'static',  # For global static files
 ]
 
 # Ensure this is present
@@ -136,3 +136,9 @@ STATIC_URL = '/static/'  # URL to serve static files
 
 # Optionally, define a static root for production (when collectstatic is used)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
