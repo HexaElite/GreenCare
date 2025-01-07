@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Dashboard_login',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'GreenCare.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +122,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+###########################################################################
+
+# Add this to STATICFILES_DIRS if your static files are in an external location
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # For global static files
+]
+
+# Ensure this is present
+STATIC_URL = '/static/'  # URL to serve static files
+
+# Optionally, define a static root for production (when collectstatic is used)
+STATIC_ROOT = BASE_DIR / 'staticfiles'

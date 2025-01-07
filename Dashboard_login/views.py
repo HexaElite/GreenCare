@@ -1,14 +1,11 @@
+# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here
-
 def maindashboard(request):
     return render(request, 'maindashboard.html',{})
-
-def login(request):
-    return render(request, 'login.html',{})
 
 def login(request):
     if request.method == 'POST':
